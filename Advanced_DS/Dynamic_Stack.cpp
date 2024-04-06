@@ -18,6 +18,8 @@
 */
 
 #include <iostream>
+#include <cstdlib> // for rand() and srand()
+#include <ctime>
 
 template <typename T>
 class DynamicStack
@@ -106,9 +108,9 @@ public:
 
     void clear()
     {
-        while(top != nullptr)
+        while (top != nullptr)
         {
-            Element* temp = top;
+            Element *temp = top;
             top = top->next;
             delete temp;
         }
@@ -118,15 +120,15 @@ public:
 
     void swap(int ind1, int ind2)
     {
-        Element* temp1 = top;
-        Element* temp2 = top;
+        Element *temp1 = top;
+        Element *temp2 = top;
 
-        for(int i = 0 ; i < ind1 ; ++i)
+        for (int i = 0; i < ind1; ++i)
         {
             temp1 = temp1->next;
         }
 
-        for(int i = 0 ; i < ind2 ; ++i)
+        for (int i = 0; i < ind2; ++i)
         {
             temp2 = temp2->next;
         }
@@ -136,11 +138,17 @@ public:
 
         temp1->data = data2;
         temp2->data = data1;
-
     }
 
     void shuffle()
     {
+        // rondom value from (0) --> (stack size - 1)
+        std::srand(std::time(nullptr));
+        int random_number = std::rand() % (stackSize - 1);
 
+        for (int i = 0; i < stackSize; ++i)
+        {
+            swap(i, random_number);
+        }
     }
 };
