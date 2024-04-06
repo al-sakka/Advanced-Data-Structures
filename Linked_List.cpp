@@ -1,5 +1,4 @@
 #include <iostream>
-using namespace std;
 
 class LinkedList
 {
@@ -101,7 +100,7 @@ public:
 
         if (index >= listSize || index < 0)
         {
-            cout << "Index Excedded.\n";
+            std::cout << "Index Excedded.\n";
             return -1;
         }
 
@@ -164,7 +163,7 @@ public:
     {
         if (index >= listSize || index < 0)
         {
-            cout << "Index Excedded.\n";
+            std::cout << "Index Excedded.\n";
             return -1;
         }
         else
@@ -205,7 +204,7 @@ public:
     {
         if (isEmpty())
         {
-            cout << "List is empty." << endl;
+            std::cout << "List is empty." << std::endl;
         }
         else
         {
@@ -213,36 +212,11 @@ public:
             Node *tempNode = head;
             for (int i = 0; i < listSize; ++i)
             {
-                cout << tempNode->data << " ";
+                std::cout << tempNode->data << " ";
                 tempNode = tempNode->next;
             }
 
-            cout << endl;
+            std::cout << std::endl;
         }
     }
 };
-
-int main()
-{
-
-    LinkedList list1 = LinkedList();
-
-    list1.insertEnd(5);
-    list1.insertStart(6);
-    list1.insertEnd(7);
-    list1.insertStart(8);
-    list1.insertEnd(9);
-
-    // 8 6 5 7 9
-
-    list1.deleteEnd();
-    list1.deleteStart();
-
-    list1.printData();
-
-    cout << "Size of list1 : " << list1.size() << endl;
-
-    // cout << "data in index 4 is " << list1.getData(5) << endl;
-
-    return 0;
-}
