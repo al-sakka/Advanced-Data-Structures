@@ -78,7 +78,8 @@ public:
     void printAll()
     {
         Element *temp = current;
-        while(temp != nullptr)
+        
+        for(int i = 0 ; i < stackSize ; ++i)
         {
             std::cout << temp->data << " ";
             temp = temp->next;
