@@ -1,3 +1,23 @@
+/*
+
+    An advanced double linked list implementation
+    Created by : Abdallah El-Sakka
+    Date : 6/4/2024
+
+    Functions availaible :
+        - isEmpty
+        - insertEnd
+        - insertStart
+        - getData
+        - deleteEnd
+        - deleteStart
+        - deleteNode
+        - size
+        - printData
+
+*/
+
+
 #include <iostream>
 
 class LinkedList
