@@ -1,6 +1,6 @@
 /*
 
-    An advanced double linked list implementation
+    An advanced double linked list implementation with head & tail
     Created by : Abdallah El-Sakka
     Date : 6/4/2024
 
