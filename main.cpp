@@ -7,5 +7,7 @@ using namespace std;
 
 int main()
 {
-    LinkedList list1 = LinkedList();
+    LinkedList<int> list;
+
+    DynamicStack stack1 = DynamicStack();
 }

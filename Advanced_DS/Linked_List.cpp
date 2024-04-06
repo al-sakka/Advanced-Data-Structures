@@ -20,15 +20,16 @@
 
 #include <iostream>
 
+template<typename T>
 class LinkedList
 {
 private:
     struct Node
     {
-        int data;
+        T data;
         Node *next;
         Node *prev;
-        Node(int d) : data(d), next(nullptr), prev(nullptr) {}
+        Node(T d) : data(d), next(nullptr), prev(nullptr) {}
     };
 
     Node *head;
@@ -57,7 +58,7 @@ public:
         return (head == nullptr);
     }
 
-    void insertEnd(int data)
+    void insertEnd(T data)
     {
         Node *newNode = new Node(data);
 
@@ -90,7 +91,7 @@ public:
         listSize++;
     }
 
-    void insertStart(int data)
+    void insertStart(T data)
     {
         Node *newNode = new Node(data);
 
@@ -115,13 +116,18 @@ public:
         listSize++;
     }
 
-    int getData(int index)
+    T getData(int index)
     {
 
         if (index >= listSize || index < 0)
         {
             std::cout << "Index Excedded.\n";
             return -1;
+        }
+        
+        if(index == listSize - 1)
+        {
+            return (tail->data);
         }
 
         Node *tempNode = head;
@@ -232,7 +238,8 @@ public:
             Node *tempNode = head;
             for (int i = 0; i < listSize; ++i)
             {
-                std::cout << tempNode->data << " ";
+                T data = tempNode->data;
+                std::cout << data << " ";
                 tempNode = tempNode->next;
             }
 

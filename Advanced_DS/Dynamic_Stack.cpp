@@ -15,6 +15,11 @@
 class DynamicStack
 {
 
+private:
+    size_t size;
+    
+
+public:
 
 
 };
