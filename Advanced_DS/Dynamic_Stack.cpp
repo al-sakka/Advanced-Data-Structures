@@ -24,7 +24,6 @@
 template <typename T>
 class DynamicStack
 {
-
 private:
     struct Element
     {
