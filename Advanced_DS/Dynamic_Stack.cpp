@@ -12,12 +12,13 @@
 
 #include <iostream>
 
+template<typename T>
 class DynamicStack
 {
 
 private:
     size_t size;
-    
+
 
 public:
 

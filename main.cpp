@@ -8,6 +8,5 @@ using namespace std;
 int main()
 {
     LinkedList<int> list;
-
-    DynamicStack stack1 = DynamicStack();
+    DynamicStack<int> stack;
 }
