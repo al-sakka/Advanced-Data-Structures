@@ -221,7 +221,7 @@ public:
         return 0;
     }
 
-    int size()
+    size_t size()
     {
         return (listSize);
     }
