@@ -15,12 +15,11 @@ int main()
     stack.push(30);
     stack.push(60);
 
-    cout << stack.peek() << endl;
+    stack.printAll();
 
-    stack.pop();
-
-    cout << stack.peek() << endl;
+    stack.swap(1,2);
 
     stack.printAll();
+
 
 }

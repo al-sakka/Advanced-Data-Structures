@@ -122,7 +122,7 @@ public:
         if (index >= listSize || index < 0)
         {
             std::cout << "Index Excedded.\n";
-            return -1;
+            return T();
         }
         
         if(index == listSize - 1)

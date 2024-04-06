@@ -11,6 +11,9 @@
         - peek
         - printAll
         - size
+        - clear
+        - swap
+        - shuffle
 
 */
 
@@ -28,28 +31,29 @@ private:
         Element(T d) : data(d), next(nullptr) {}
     };
 
-    Element *current;
+    Element *top;
     size_t stackSize;
 
 public:
-    DynamicStack() : current(nullptr), stackSize(0) {}
+    DynamicStack() : top(nullptr), stackSize(0) {}
 
     ~DynamicStack()
     {
-        // TODO :
+        // TODO : clear the stack.
+        clear();
     }
 
     bool isEmpty()
     {
-        return (current == nullptr);
+        return (top == nullptr);
     }
 
     void push(T data)
     {
 
         Element *newSt = new Element(data);
-        newSt->next = current;
-        current = newSt;
+        newSt->next = top;
+        top = newSt;
 
         stackSize++;
     }
@@ -58,8 +62,8 @@ public:
     {
         if (!isEmpty())
         {
-            Element *temp = current;
-            current = current->next;
+            Element *temp = top;
+            top = top->next;
             delete temp;
 
             stackSize--;
@@ -72,14 +76,22 @@ public:
 
     T peek()
     {
-        return (current->data);
+        if (!isEmpty())
+        {
+            return (top->data);
+        }
+        else
+        {
+            std::cout << "Stack is already empty." << std::endl;
+            return T();
+        }
     }
 
     void printAll()
     {
-        Element *temp = current;
-        
-        for(int i = 0 ; i < stackSize ; ++i)
+        Element *temp = top;
+
+        for (int i = 0; i < stackSize; ++i)
         {
             std::cout << temp->data << " ";
             temp = temp->next;
@@ -90,5 +102,45 @@ public:
     size_t size() const
     {
         return (stackSize);
+    }
+
+    void clear()
+    {
+        while(top != nullptr)
+        {
+            Element* temp = top;
+            top = top->next;
+            delete temp;
+        }
+
+        stackSize = 0;
+    }
+
+    void swap(int ind1, int ind2)
+    {
+        Element* temp1 = top;
+        Element* temp2 = top;
+
+        for(int i = 0 ; i < ind1 ; ++i)
+        {
+            temp1 = temp1->next;
+        }
+
+        for(int i = 0 ; i < ind2 ; ++i)
+        {
+            temp2 = temp2->next;
+        }
+
+        int data1 = temp1->data;
+        int data2 = temp2->data;
+
+        temp1->data = data2;
+        temp2->data = data1;
+
+    }
+
+    void shuffle()
+    {
+
     }
 };
