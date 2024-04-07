@@ -250,5 +250,8 @@ public:
             head = head->next;
             delete temp;
         }
+
+        listSize = 0;
+
     }
 };
