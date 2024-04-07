@@ -92,10 +92,10 @@ void _linkedList()
 
 void _stack()
 {
-    cout << "Stack\n";
+    // TODO : To be implemented
 }
 
 void _queue()
 {
-    cout << "Queue\n";
+    // TODO : To be implemented
 }
