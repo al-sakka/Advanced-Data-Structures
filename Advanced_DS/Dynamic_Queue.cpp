@@ -9,6 +9,7 @@
         - push
         - pop
         - peek
+        - printData
         - size
         - clear
 
@@ -47,7 +48,7 @@ public:
 
     void push(T data)
     {
-        Element *newElem = Element(data);
+        Element *newElem = new Element(data);
 
         if (isEmpty())
         {
@@ -90,10 +91,30 @@ public:
         if (isEmpty())
         {
             std::cout << "Queue is empty." << std::endl;
+            return T();
         }
         else
         {
             return (Top->data);
+        }
+    }
+
+    void printData()
+    {
+        if(isEmpty())
+        {
+            std::cout << "Queue is empty." << std::endl;
+        }
+        else
+        {
+            Element* temp = Top;
+            for(int i = 0 ; i < queueSize ; ++i)
+            {
+                std::cout << temp->data << " ";
+                temp = temp->next;
+            }
+
+            std::cout << std::endl;
         }
     }
 
