@@ -33,12 +33,15 @@ private:
     size_t queueSize;
 
 public:
+
+    // Constructor
     DynamicQueue() : Top(nullptr), Tail(nullptr), queueSize(0) {}
 
+    // Destructor
     ~DynamicQueue()
     {
-        // TODO : clear the queue
-        // clear();
+        // TODO : clear queue data from memory
+        clear();
     }
 
     bool isEmpty()

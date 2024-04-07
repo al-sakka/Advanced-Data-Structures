@@ -36,11 +36,14 @@ private:
     size_t stackSize;
 
 public:
+
+    // Constructor
     DynamicStack() : top(nullptr), stackSize(0) {}
 
+    // Destructor
     ~DynamicStack()
     {
-        // TODO : clear the stack.
+        // TODO : clear stack data from memory
         clear();
     }
 
