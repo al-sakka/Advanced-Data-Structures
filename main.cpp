@@ -7,20 +7,10 @@ using namespace std;
 
 int main()
 {
-    // LinkedList<int> l;
+    // LinkedList<int> list;
 
-    // DynamicStack<int> s;
+    // DynamicStack<int> stack;
 
-    DynamicQueue<int> q;
+    // DynamicQueue<int> queue;
 
-    q.push(50);
-    q.push(60);
-    q.push(70);
-    q.push(80);
-
-    q.printData();
-
-    q.clear();
-    
-    q.printData();
 }
