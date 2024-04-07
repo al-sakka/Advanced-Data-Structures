@@ -3,89 +3,89 @@
 #include "Advanced_DS/Dynamic_Queue.cpp"
 
 #include <iostream>
-
 using namespace std;
 
 void _linkedList()
 {
-    cout << "You are now in a linked list\n";
+    LinkedList<int> list;
+
+    cout << "You are in a linked list\n";
+
     while (1)
     {
-        LinkedList<int> list;
+        cout << "Choose an operation to do : \n";
+        cout << " 1) insert end \n 2) insert start\n 3) get data \n 4) delete end \n 5) delete start \n 6) deleteNode \n 7) size \n 8) print data \n 9) clear \n10) back to menu \n";
 
-        while (1)
+        int16_t nOfChoices = 10;
+        int16_t choice;
+
+        cin >> choice;
+
+        if (choice == 1)
+        {
+            cout << "Enter data : \n";
+
+            int data;
+            cin >> data;
+
+            list.insertEnd(data);
+        }
+        else if (choice == 2)
         {
 
-            cout << "Choose an operation to do : \n";
-            cout << " 1) insert end \n 2) insert start\n 3) get data \n 4) delete end \n 5) delete start \n 6) deleteNode \n 7) size \n 8) print data \n 9) clear \n";
+            cout << "Enter data : \n";
 
-            int16_t nOfChoices = 9;
-            int16_t choice;
+            int data;
+            cin >> data;
 
-            cin >> choice;
+            list.insertStart(data);
+        }
+        else if (choice == 3)
+        {
 
-            if (choice == 1)
-            {
-                cout << "Enter data : \n";
+            cout << "Enter index : \n";
 
-                int data;
-                cin >> data;
+            int index;
+            cin >> index;
 
-                list.insertEnd(data);
-            }
-            else if (choice == 2)
-            {
+            list.getData(index);
+        }
+        else if (choice == 4)
+        {
+            list.deleteEnd();
+        }
+        else if (choice == 5)
+        {
+            list.deleteStart();
+        }
+        else if (choice == 6)
+        {
+            cout << "Enter index : \n";
 
-                cout << "Enter data : \n";
+            int index;
+            cin >> index;
 
-                int data;
-                cin >> data;
-
-                list.insertStart(data);
-            }
-            else if (choice == 3)
-            {
-
-                cout << "Enter index : \n";
-
-                int index;
-                cin >> index;
-
-                list.getData(index);
-            }
-            else if (choice == 4)
-            {
-                list.deleteEnd();
-            }
-            else if (choice == 5)
-            {
-                list.deleteStart();
-            }
-            else if (choice == 6)
-            {
-                cout << "Enter index : \n";
-
-                int index;
-                cin >> index;
-
-                list.deleteNode(index);
-            }
-            else if (choice == 7)
-            {
-                cout << "size of your linked list : " << list.size() << endl;
-            }
-            else if (choice == 8)
-            {
-                list.printData();
-            }
-            else if (choice == 9)
-            {
-                list.clear();
-            }
-            else
-            {
-                cout << "Enter number between 1 and " << nOfChoices << endl;
-            }
+            list.deleteNode(index);
+        }
+        else if (choice == 7)
+        {
+            cout << "size of your linked list : " << list.size() << endl;
+        }
+        else if (choice == 8)
+        {
+            list.printData();
+        }
+        else if (choice == 9)
+        {
+            list.clear();
+        }
+        else if (choice == 10)
+        {
+            break;
+        }
+        else
+        {
+            cout << "Enter number between 1 and " << nOfChoices << endl;
         }
     }
 }
