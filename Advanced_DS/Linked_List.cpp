@@ -14,13 +14,13 @@
         - deleteNode
         - size
         - printData
+        - clear
 
 */
 
-
 #include <iostream>
 
-template<typename T>
+template <typename T>
 class LinkedList
 {
 private:
@@ -45,12 +45,7 @@ public:
     {
         // This method to just clear the memory after the program is executed.
 
-        while (!isEmpty())
-        {
-            Node *temp = head;
-            head = head->next;
-            delete temp;
-        }
+        clear();
     }
 
     bool isEmpty()
@@ -124,8 +119,8 @@ public:
             std::cout << "Index Excedded.\n";
             return T();
         }
-        
-        if(index == listSize - 1)
+
+        if (index == listSize - 1)
         {
             return (tail->data);
         }
@@ -244,6 +239,16 @@ public:
             }
 
             std::cout << std::endl;
+        }
+    }
+
+    void clear()
+    {
+        while (!isEmpty())
+        {
+            Node *temp = head;
+            head = head->next;
+            delete temp;
         }
     }
 };
