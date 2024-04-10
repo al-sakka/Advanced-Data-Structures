@@ -11,6 +11,9 @@ public:
     Coordinate(int X, int Y) : x(X), y(X) {}
 };
 
+/*
+    A maze solver using dynamic stack data structure
+*/
 class MazeSolver
 {
 private:
