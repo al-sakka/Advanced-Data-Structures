@@ -33,7 +33,6 @@ private:
     size_t queueSize;
 
 public:
-
     // Constructor
     DynamicQueue() : Top(nullptr), Tail(nullptr), queueSize(0) {}
 
@@ -67,16 +66,17 @@ public:
         queueSize++;
     }
 
-    void pop()
+    T pop()
     {
-
         if (isEmpty())
         {
             std::cout << "Queue is already empty." << std::endl;
+            return T();
         }
         else
         {
             Element *temp = Top;
+            T poppedData = Top->data;
             Top = Top->next;
             delete temp;
 
@@ -86,6 +86,7 @@ public:
             }
 
             queueSize--;
+            return poppedData;
         }
     }
 
@@ -104,14 +105,14 @@ public:
 
     void printData()
     {
-        if(isEmpty())
+        if (isEmpty())
         {
             std::cout << "Queue is empty." << std::endl;
         }
         else
         {
-            Element* temp = Top;
-            for(int i = 0 ; i < queueSize ; ++i)
+            Element *temp = Top;
+            for (int i = 0; i < queueSize; ++i)
             {
                 std::cout << temp->data << " ";
                 temp = temp->next;

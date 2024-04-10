@@ -92,10 +92,123 @@ void _linkedList()
 
 void _stack()
 {
-    // TODO : To be implemented
+    DynamicStack<int> stack;
+
+    cout << "You are in a dynamic stack\n";
+
+    while (1)
+    {
+        cout << "Choose an operation to do : \n";
+        cout << " 1) push \n 2) pop \n 3) peek \n 4) printAll \n 5) size \n 6) clear \n 7) swap \n 8) shuffle \n 9) back to menu \n";
+        
+        int16_t nOfChoices = 9;
+        int16_t choice;
+
+        cin >> choice;
+
+        if (choice == 1)
+        {
+            cout << "Enter data : \n";
+
+            int data;
+            cin >> data;
+
+            stack.push(data);
+        }
+        else if (choice == 2)
+        {
+            cout << stack.pop() << endl;
+        }
+        else if (choice == 3)
+        {
+            cout << stack.peek() << endl;
+        }
+        else if (choice == 4)
+        {
+            stack.printAll();
+        }
+        else if (choice == 5)
+        {
+            cout << stack.size() << endl;
+        }
+        else if (choice == 6)
+        {
+            stack.clear();
+        }
+        else if (choice == 7)
+        {
+            cout << "Enter index 1 & index 2 : \n";
+            int ind1, ind2;
+            cin >> ind1 >> ind2;
+            stack.swap(ind1, ind2);
+        }
+        else if (choice == 8)
+        {
+            stack.shuffle();
+        }
+        else if (choice == 9)
+        {
+            break;
+        }
+        else
+        {
+            cout << "Enter number between 1 and " << nOfChoices << endl;
+        }
+    }
 }
 
 void _queue()
 {
-    // TODO : To be implemented
+    DynamicQueue<int> queue;
+
+    cout << "You are in a dynamic queue\n";
+
+    while (1)
+    {
+        cout << "Choose an operation to do : \n";
+        cout << " 1) push \n 2) pop \n 3) peek \n 4) printData \n 5) size \n 6) clear \n 7) back to menu \n";
+        
+        int16_t nOfChoices = 7;
+        int16_t choice;
+
+        cin >> choice;
+
+        if (choice == 1)
+        {
+            cout << "Enter data : \n";
+
+            int data;
+            cin >> data;
+
+            queue.push(data);
+        }
+        else if (choice == 2)
+        {
+            cout << queue.pop() << endl;
+        }
+        else if (choice == 3)
+        {
+            cout << queue.peek() << endl;
+        }
+        else if (choice == 4)
+        {
+            queue.printData();
+        }
+        else if (choice == 5)
+        {
+            cout << queue.size() << endl;
+        }
+        else if (choice == 6)
+        {
+            queue.clear();
+        }
+        else if (choice == 7)
+        {
+            break;
+        }
+        else
+        {
+            cout << "Enter number between 1 and " << nOfChoices << endl;
+        }
+    }
 }

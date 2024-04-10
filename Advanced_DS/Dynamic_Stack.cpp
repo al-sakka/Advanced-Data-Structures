@@ -62,19 +62,23 @@ public:
         stackSize++;
     }
 
-    void pop()
+    T pop()
     {
         if (!isEmpty())
         {
             Element *temp = top;
+            T poppedData = top->data;
             top = top->next;
             delete temp;
 
             stackSize--;
+
+            return poppedData;
         }
         else
         {
             std::cout << "Stack is already empty." << std::endl;
+            return T();
         }
     }
 
