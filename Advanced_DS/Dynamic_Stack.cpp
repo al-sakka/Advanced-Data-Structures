@@ -47,6 +47,7 @@ public:
     }
 
     bool isEmpty() const
+    // const here means not to modify the state of the object it is called on.
     {
         return (top == nullptr);
     }
