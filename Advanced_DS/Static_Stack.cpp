@@ -111,7 +111,7 @@ public:
         else
         {
             int topPtr = topIndex;
-            for(int i = 0 ; i < capacity; ++i)
+            for(int i = 0 ; i < topIndex; ++i)
             {
                 std::cout << data[topPtr - 1] << " ";
                 --topPtr;
