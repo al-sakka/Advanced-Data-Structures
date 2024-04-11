@@ -1,6 +1,6 @@
 /*
-
     An advanced dynamic stack implementation
+    follows LIFO (last in first out) principle
     Created by : Abdallah El-Sakka
     Date : 6/4/2024
 
@@ -14,7 +14,6 @@
         - clear
         - swap
         - shuffle
-
 */
 
 #include <iostream>
@@ -47,21 +46,29 @@ public:
         clear();
     }
 
-    bool isEmpty()
+    bool isEmpty() const
     {
         return (top == nullptr);
     }
 
-    void push(T data)
+    /*
+        Add element to the top.
+    */
+    void push(const T& data) 
+    // pass by reference to not make a copy of the value.
+    // const to not change the value inside the function.
     {
 
-        Element *newSt = new Element(data);
-        newSt->next = top;
-        top = newSt;
+        Element *newEl = new Element(data);
+        newEl->next = top;
+        top = newEl;
 
         stackSize++;
     }
 
+    /*
+        Returns first element and switch the top to the second element.
+    */
     T pop()
     {
         if (!isEmpty())
@@ -82,7 +89,11 @@ public:
         }
     }
 
-    T peek()
+    /*
+        Returns first element.
+    */
+    T peek() const
+    // can also named Top()
     {
         if (!isEmpty())
         {
@@ -95,6 +106,9 @@ public:
         }
     }
 
+    /*
+        Print the whole stack.
+    */
     void printAll()
     {
         Element *temp = top;
@@ -114,14 +128,20 @@ public:
 
     void clear()
     {
-        while (top != nullptr)
+        while(!isEmpty())
         {
-            Element *temp = top;
-            top = top->next;
-            delete temp;
+            pop();
         }
 
-        stackSize = 0;
+        /*
+            while (top != nullptr)
+            {
+                Element *temp = top;
+                top = top->next;
+                delete temp;
+            }
+            stackSize = 0;
+        */
     }
 
     void swap(int ind1, int ind2)

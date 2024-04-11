@@ -1,6 +1,7 @@
 /*
 
     An advanced dynamic queue implementation
+    follows FIFO (first in first out) principle
     Created by : Abdallah El-Sakka
     Date : 6/4/2024
 

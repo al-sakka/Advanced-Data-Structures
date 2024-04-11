@@ -8,6 +8,7 @@
         - isEmpty
         - insertEnd
         - insertStart
+        - insert
         - getData
         - deleteEnd
         - deleteStart
@@ -48,7 +49,7 @@ public:
         clear();
     }
 
-    bool isEmpty()
+    bool isEmpty() const
     {
         return (head == nullptr);
     }
@@ -69,18 +70,24 @@ public:
         }
         else
         {
-            Node *temp = head;
-
-            while (temp->next != nullptr)
-            {
-                temp = temp->next;
-            }
-
-            temp->next = newNode;
-            newNode->prev = temp;
+            // O(1)
+            tail->next = newNode;
+            newNode->prev = tail;
             newNode->next = nullptr;
-
             tail = newNode;
+
+            // O(n)
+            /*
+                Node *temp = head;
+                while (temp->next != nullptr)
+                {
+                    temp = temp->next;
+                }
+                temp->next = newNode;
+                newNode->prev = temp;
+                newNode->next = nullptr;
+                tail = newNode;
+            */
         }
 
         listSize++;
@@ -109,6 +116,37 @@ public:
         }
 
         listSize++;
+    }
+
+    void insert(size_t index, T value)
+    {
+        if (index > listSize)
+            return;
+
+        if (index == 0)
+        {
+            insertStart(value);
+        }
+        else if (index == listSize)
+        {
+            insertEnd(value);
+        }
+        else
+        {
+            Node *newNode = new Node(value);
+            Node *temp = head;
+
+            for (int i = 0; i < index - 1; ++i)
+            {
+                temp = temp->next;
+            }
+
+            newNode->prev = temp;
+            newNode->next = temp->next;
+            temp->next->prev = newNode;
+            temp->next = newNode;
+            listSize++;
+        }
     }
 
     T getData(int index)
@@ -216,7 +254,7 @@ public:
         return 0;
     }
 
-    size_t size()
+    size_t size() const
     {
         return (listSize);
     }
@@ -252,6 +290,5 @@ public:
         }
 
         listSize = 0;
-
     }
 };

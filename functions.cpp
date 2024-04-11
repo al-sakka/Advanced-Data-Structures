@@ -14,9 +14,9 @@ void _linkedList()
     while (1)
     {
         cout << "Choose an operation to do : \n";
-        cout << " 1) insert end \n 2) insert start\n 3) get data \n 4) delete end \n 5) delete start \n 6) deleteNode \n 7) size \n 8) print data \n 9) clear \n10) back to menu \n";
+        cout << " 1) insert end \n 2) insert start \n 3) insert \n 4) get data \n 5) delete end \n 6) delete start \n 7) deleteNode \n 8) size \n 9) print data \n 10) clear \n 11) back to menu \n";
 
-        int16_t nOfChoices = 10;
+        int16_t nOfChoices = 11;
         int16_t choice;
 
         cin >> choice;
@@ -48,17 +48,32 @@ void _linkedList()
             int index;
             cin >> index;
 
-            list.getData(index);
+            cout << "Enter value : \n";
+
+            int value;
+            cin >> value;
+
+            list.insert(index, value);
         }
         else if (choice == 4)
         {
-            list.deleteEnd();
+
+            cout << "Enter index : \n";
+
+            int index;
+            cin >> index;
+
+            cout << list.getData(index) << endl;
         }
         else if (choice == 5)
         {
-            list.deleteStart();
+            list.deleteEnd();
         }
         else if (choice == 6)
+        {
+            list.deleteStart();
+        }
+        else if (choice == 7)
         {
             cout << "Enter index : \n";
 
@@ -67,19 +82,19 @@ void _linkedList()
 
             list.deleteNode(index);
         }
-        else if (choice == 7)
+        else if (choice == 8)
         {
             cout << "size of your linked list : " << list.size() << endl;
         }
-        else if (choice == 8)
+        else if (choice == 9)
         {
             list.printData();
         }
-        else if (choice == 9)
+        else if (choice == 10)
         {
             list.clear();
         }
-        else if (choice == 10)
+        else if (choice == 11)
         {
             break;
         }
@@ -212,7 +227,6 @@ void _queue()
         }
     }
 }
-
 
 int performUI()
 {
