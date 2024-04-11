@@ -257,6 +257,4 @@ int performUI()
             break;
         }
     }
-
-    return 0;
 }
