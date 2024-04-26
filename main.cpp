@@ -3,7 +3,6 @@
     Created by : Abdallah El-Sakka
     Date : 10/4/2024
 */
-
 #include "includes/functions.hpp"
 
 int main()
@@ -11,5 +10,5 @@ int main()
     /*
         simple UI to choose between different data structures.
     */
-    return performUI();
+    return performUX();
 }

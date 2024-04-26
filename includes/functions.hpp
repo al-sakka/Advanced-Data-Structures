@@ -11,6 +11,6 @@ using namespace std;
 void _linkedList();
 void _stack();
 void _queue();
-int performUI();
+int performUX();
 
 #endif

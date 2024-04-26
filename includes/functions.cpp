@@ -223,7 +223,10 @@ void _queue()
     }
 }
 
-int performUI()
+/*
+    start application for the user
+*/
+int performUX()
 {
     while (1)
     {
