@@ -4,7 +4,7 @@
     Date : 10/4/2024
 */
 
-#include "functions.cpp"
+#include "includes/functions.hpp"
 
 int main()
 {
