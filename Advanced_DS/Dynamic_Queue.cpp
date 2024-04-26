@@ -50,6 +50,7 @@ public:
     }
 
     void push(T data)
+    // Enqueue
     {
         Element *newElem = new Element(data);
 
@@ -68,6 +69,7 @@ public:
     }
 
     T pop()
+    // Dequeue
     {
         if (isEmpty())
         {
