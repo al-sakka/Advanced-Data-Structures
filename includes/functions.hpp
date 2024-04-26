@@ -1,10 +1,10 @@
 #ifndef _FUNCTIONS_H_
 #define _FUNCTIONS_H_
 
-#include "../Advanced_DS/Circular_Queue.cpp"
-#include "../Advanced_DS/Linked_List.cpp"
-#include "../Advanced_DS/Dynamic_Stack.cpp"
-#include "../Advanced_DS/Dynamic_Queue.cpp"
+#include "../Advanced_DS/Circular_Queue.hpp"
+#include "../Advanced_DS/Linked_List.hpp"
+#include "../Advanced_DS/Dynamic_Stack.hpp"
+#include "../Advanced_DS/Dynamic_Queue.hpp"
 #include <iostream>
 using namespace std;
 

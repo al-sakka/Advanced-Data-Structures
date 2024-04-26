@@ -24,15 +24,16 @@ class Queue
 private:
     void resize(int new_capacity)
     {
-        int *new_data = new int[new_capacity];
+        T *new_arr = new T[new_capacity];
 
         for (int i = 0; i < _size; i++)
         {
-            new_data[i] = arr[(front + i) % capacity];
+            // Copy all data from old array to the new one
+            new_arr[i] = arr[(front + i) % capacity];
         }
 
         delete[] arr;
-        arr = new_data;
+        arr = new_arr;
         front = 0;
         rear = _size - 1;
         capacity = new_capacity;
@@ -42,7 +43,11 @@ private:
     T *arr;
     int front;
     int rear;
+
+    // number of elements
     int _size;
+
+    // actual size of the array
     int capacity;
 
 public:
