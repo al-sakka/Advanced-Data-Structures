@@ -5,6 +5,7 @@
 #include "../Advanced_DS/Linked_List.hpp"
 #include "../Advanced_DS/Dynamic_Stack.hpp"
 #include "../Advanced_DS/Dynamic_Queue.hpp"
+#include "../Advanced_DS/BS_Tree.hpp"
 #include <iostream>
 using namespace std;
 
