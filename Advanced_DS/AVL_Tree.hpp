@@ -4,7 +4,8 @@
     Date : 11/5/2024
 
     Functions availaible :
-        -
+        - insert
+        - in order traversal
 */
 
 #include <iostream>
