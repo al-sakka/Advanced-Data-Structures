@@ -22,7 +22,7 @@ public:
     T data;
     Node *left;
     Node *right;
-
+    // int height;
     Node(T d) : data(d), left(nullptr), right(nullptr) {}
 };
 
@@ -31,7 +31,6 @@ public:
 template <class T>
 class BSTree
 {
-
 private:
     Node<T> *insertRec(Node<T> *node, T data)
     // Recursive function to insert a new node into the BST.
