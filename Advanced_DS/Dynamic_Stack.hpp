@@ -17,6 +17,8 @@
 */
 
 #include <iostream>
+
+// For Shuffle Algorithm.
 #include <cstdlib> // for rand() and srand()
 #include <ctime>
 
@@ -34,6 +36,8 @@ private:
     Element *top;
     size_t stackSize;
 
+    int nOfFunctions = 8;
+
 public:
 
     // Constructor
@@ -44,6 +48,11 @@ public:
     {
         // TODO : clear stack data from memory
         clear();
+    }
+
+    int getnOfFunctions() const
+    {
+        return nOfFunctions;
     }
 
     bool isEmpty() const

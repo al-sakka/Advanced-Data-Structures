@@ -16,8 +16,6 @@
 
 #include <iostream>
 
-using namespace std;
-
 template <class T>
 class Queue
 {
@@ -68,7 +66,7 @@ public:
 
     bool isEmpty() const
     {
-        return (_size == 0);
+        return (!_size);
     }
 
     bool isFull() const

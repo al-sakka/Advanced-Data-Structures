@@ -33,6 +33,8 @@ private:
     Element *Tail;
     size_t queueSize;
 
+    int nOfFunctions = 6;
+
 public:
     // Constructor
     DynamicQueue() : Top(nullptr), Tail(nullptr), queueSize(0) {}
@@ -42,6 +44,11 @@ public:
     {
         // TODO : clear queue data from memory
         clear();
+    }
+
+    int getnOfFunctions()
+    {
+        return nOfFunctions;
     }
 
     bool isEmpty()

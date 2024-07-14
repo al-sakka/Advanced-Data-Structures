@@ -11,7 +11,8 @@ void _linkedList()
         cout << "Choose an operation to do : \n";
         cout << " 1) insert end \n 2) insert start \n 3) insert \n 4) get data \n 5) delete end \n 6) delete start \n 7) deleteNode \n 8) size \n 9) print data \n 10) clear \n 11) back to menu \n";
 
-        int16_t nOfChoices = 11;
+        int16_t nOfFunctions = list.getnOfFunctions();
+        int16_t nOfChoices = nOfFunctions + 1;
         int16_t choice;
 
         cin >> choice;
@@ -98,7 +99,7 @@ void _linkedList()
             cout << "Enter number between 1 and " << nOfChoices << endl;
         }
     }
-}
+} // Linked List
 
 void _stack()
 {
@@ -111,7 +112,8 @@ void _stack()
         cout << "Choose an operation to do : \n";
         cout << " 1) push \n 2) pop \n 3) peek \n 4) printAll \n 5) size \n 6) clear \n 7) swap \n 8) shuffle \n 9) back to menu \n";
 
-        int16_t nOfChoices = 9;
+        int16_t nOfFunctions = stack.getnOfFunctions();
+        int16_t nOfChoices = nOfFunctions + 1;
         int16_t choice;
 
         cin >> choice;
@@ -165,7 +167,7 @@ void _stack()
             cout << "Enter number between 1 and " << nOfChoices << endl;
         }
     }
-}
+} // Stack
 
 void _queue()
 {
@@ -178,7 +180,8 @@ void _queue()
         cout << "Choose an operation to do : \n";
         cout << " 1) push \n 2) pop \n 3) peek \n 4) printData \n 5) size \n 6) clear \n 7) back to menu \n";
 
-        int16_t nOfChoices = 7;
+        int16_t nOfFunctions = queue.getnOfFunctions();
+        int16_t nOfChoices = nOfFunctions + 1;
         int16_t choice;
 
         cin >> choice;
@@ -221,38 +224,66 @@ void _queue()
             cout << "Enter number between 1 and " << nOfChoices << endl;
         }
     }
-}
+} // Queue
 
-/*
-    start application for the user
-*/
-int performUX()
+void _tree()
 {
+    BSTree<int> tree;
+    cout << "You are in a tree\n";
+
     while (1)
     {
-        cout << "Choose a data structure : " << endl;
-        cout << " 1) Linked List \n 2) Stack \n 3) Queue \n 4) Exit \n ";
-        int16_t nOfChoices = 4;
+        cout << "Choose an operation to do : \n";
+        cout << " 1) insert \n 2) remove \n 3) in order traversal \n 4) pre order traversal \n 5) post order traversal \n 6) level order traversal \n 7) back to menu \n";
 
+        int nOfFunctions = tree.getnOfFunctions();
+        int16_t nOfChoices = nOfFunctions + 1;
         int16_t choice;
+
         cin >> choice;
 
-        switch (choice)
+        if (choice == 1)
         {
-        case 1:
-            _linkedList();
-            break;
-        case 2:
-            _stack();
-            break;
-        case 3:
-            _queue();
-            break;
-        case 4:
-            return 0;
-        default:
-            cout << "Choose between 1 and " << nOfChoices << endl;
+            cout << "Enter data to insert: \n";
+
+            int data;
+            cin >> data;
+
+            tree.insert(data);
+        }
+        else if (choice == 2)
+        {
+
+            cout << "Enter data to remove: \n";
+
+            int data;
+            cin >> data;
+
+            tree.remove(data);
+        }
+        else if (choice == 3)
+        {
+            tree.inOrderTraversal();
+        }
+        else if (choice == 4)
+        {
+            tree.preOrderTraversal();
+        }
+        else if (choice == 5)
+        {
+            tree.postOrderTraversal();
+        }
+        else if (choice == 6)
+        {
+            tree.levelOrderTraversal();
+        }
+        else if (choice == 7)
+        {
             break;
         }
+        else
+        {
+            cout << "Enter number between 1 and " << nOfChoices << endl;
+        }
     }
-}
+} // Tree

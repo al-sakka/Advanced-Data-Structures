@@ -26,12 +26,13 @@ public:
     Node(T d) : data(d), left(nullptr), right(nullptr) {}
 };
 
-////**////
-
 template <class T>
 class BSTree
 {
 private:
+
+    int noOfFunctions = 6;
+
     Node<T> *insertRec(Node<T> *node, T data)
     // Recursive function to insert a new node into the BST.
     {
@@ -162,6 +163,11 @@ private:
 
 public:
     BSTree() : root(nullptr){};
+
+    int getnOfFunctions() const
+    {
+        return noOfFunctions;
+    }
 
     void insert(T data)
     {

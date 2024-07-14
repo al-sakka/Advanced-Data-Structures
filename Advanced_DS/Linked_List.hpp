@@ -25,6 +25,9 @@ template <typename T>
 class LinkedList
 {
 private:
+
+    int nOfFunctions = 10;
+
     struct Node
     {
         T data;
@@ -47,6 +50,11 @@ public:
         // This method to just clear the memory after the program is executed.
 
         clear();
+    }
+
+    int getnOfFunctions() const
+    {
+        return nOfFunctions;
     }
 
     bool isEmpty() const

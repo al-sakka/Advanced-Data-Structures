@@ -7,9 +7,6 @@
 
 int main()
 {
-
-    /*
-        simple UI to choose between different data structures.
-    */
-    return performUX();
+    // Perform the user experience to choose between different data structures.
+    return PerformUX();
 }

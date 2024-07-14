@@ -1,8 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <random>
-#include "../../Advanced_DS/Dynamic_Stack.cpp"
-using namespace std;
+#include "../../Advanced_DS/Dynamic_Stack.hpp"
 
 class Coordinate
 {
@@ -17,16 +16,16 @@ public:
 class MazeSolver
 {
 private:
-    vector<vector<int>> maze;
-    vector<vector<bool>> visited;
+    std::vector<std::vector<int>> maze;
+    std::vector<std::vector<bool>> visited;
     int rows, cols;
 
 public:
-    MazeSolver(vector<vector<int>> mz) : maze(mz)
+    MazeSolver(std::vector<std::vector<int>> mz) : maze(mz)
     {
         rows = maze.size();
         cols = maze[0].size();
-        visited.resize(rows, vector<bool>(cols, false));
+        visited.resize(rows, std::vector<bool>(cols, false));
     }
 
     bool isValid(int x, int y)
@@ -47,7 +46,7 @@ public:
 
             if (current.x == endX && current.y == endY)
             {
-                cout << "Solved!\n";
+                std::cout << "Solved!\n";
                 return true;
             }
 
@@ -67,7 +66,7 @@ public:
             }
         }
 
-        cout << "No Path Found!\n";
+        std::cout << "No Path Found!\n";
         return false;
     }
 };

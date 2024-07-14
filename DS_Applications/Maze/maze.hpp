@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 #include <random>
-using namespace std;
 
 /*
     - This is a binary based maze
@@ -36,9 +35,9 @@ private:
 public:
     int rows;
     int cols;
-    vector<vector<int>> matrix;
+    std::vector<std::vector<int>> matrix;
 
-    Maze(size_t n, size_t m) : rows(n), cols(m), matrix(n, vector<int>(m)) {}
+    Maze(size_t n, size_t m) : rows(n), cols(m), matrix(n, std::vector<int>(m)) {}
 
     ~Maze()
     {
@@ -92,9 +91,9 @@ public:
         {
             for (int j = 0; j < cols; ++j)
             {
-                cout << matrix[i][j] << " ";
+                std::cout << matrix[i][j] << " ";
             }
-            cout << endl;
+            std::cout << std::endl;
         }
     }
 };
